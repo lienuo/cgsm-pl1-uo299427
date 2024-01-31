@@ -1,24 +1,10 @@
-11
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
 module.exports = {
     mode: "development",
     entry: {
+        "prac1-1": "./src/prac1-1.js",
+        "prac1-2": "./src/prac1-2.js",
+        "prac1-3": "./src/prac1-3.js",
+        "prac1-3": "./src/prac1-4.js",
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -34,20 +20,3 @@ module.exports = {
         maxEntrypointSize: 1000000
     }
 };
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
