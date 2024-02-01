@@ -15,18 +15,30 @@ if ( WEBGL.isWebGLAvailable() ) {
     const material = new THREE.MeshBasicMaterial({color: 0xffff0000} );
     const box = new THREE.Mesh( geometry, material );
     box.position.set(-100,0,0)
-    
-    //Cilindro.
-    const geometrycilindro = new THREE.CylinderGeometry( 10, 10, 40, 32 ); 
-    const material1 = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
-    const cylinder = new THREE.Mesh( geometrycilindro, material1 ); scene.add( cylinder )
-    cylinder.rotation.set( Math.PI / 5, Math.PI / 5, 0 )
-    //Esfera
-    const geometryesfera = new THREE.SphereGeometry( 15, 40, 40 ); 
-    const material2 = new THREE.MeshBasicMaterial( { color: 0xffff25 } ); 
-    const sphere = new THREE.Mesh( geometryesfera, material2 ); scene.add( sphere );
-    sphere.position.set(100,0,0)
-    sphere.rotation.set( Math.PI / 5, Math.PI / 5, 0 )
-
     scene.add( box );
-    renderer.render( scene, camera );}
+    // luz
+const light = new THREE.AmbientLight( 0xffffff ); // soft white light
+scene.add( light );
+//Esfera
+const geometryesfera = new THREE.SphereGeometry( 15, 40, 40 ); 
+const material2 = new THREE.MeshLambertMaterial( ); 
+material2.color.set(0xffff00);
+const sphere = new THREE.Mesh( geometryesfera, material2 ); scene.add( sphere );
+sphere.position.set(100,0,0)
+sphere.rotation.set( Math.PI / 5, Math.PI / 5, 0 )
+
+//Cilindro.
+const geometrycilindro = new THREE.CylinderGeometry( 10, 10, 40, 32 ); 
+const material3 = new THREE.MeshPhongMaterial(  ); 
+material3.color.set(0x0000ff);
+const cylinder = new THREE.Mesh( geometrycilindro, material3 ); scene.add( cylinder )
+cylinder.rotation.set( Math.PI / 5, Math.PI / 5, 0 )
+
+    renderer.render( scene, camera );
+    window.addEventListener( 'resize', ( ) => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix( );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.render( scene, camera );
+    }, false );
+}

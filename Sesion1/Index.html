@@ -20,26 +20,42 @@
             </table>
         </div>
         <div id="content">
-            <h1>Memoria</h1>
+            <h1>Computación Gráfica y Servicios Multimedia</h1>
             <h2>Descripción de la práctica</h2>
-                <p>Descripción breve del desarrollo de la práctica respondiendo a las cuestiones que se plantean en el guión.</p>
+                
             <h2>Ejercicio 1</h2>
-                <p>Ejemplo de cómo incluir una escena.</p>
+            <p>1-	Se crea un fichero de nombre prac1-1.js en el subdirectorio dist con tu código JavaScript transpirado y combinado. Referéncialo desde tu fichero HTML, se completa el código de una página web mínima que verifique el soporte del navegador de WebGL e informe al usuario.</p>
                 <ol>
-                    <li>Desarrollar la escena en su propio fichero html+css+js.</li>
-                    <li>Incrustar el fichero html en este documento utilizando el objeto <span class="code">iframe</span> siguiente. Debe establecerse su propiedad <span class="code">src</span> apuntando al fichero html. Ten cuidado de adjuntar todos los ficheros necesarios.</li>
                 </ol>
-                <iframe class="container">                    
+                <iframe class="container" src="prac1-1.html">                    
                 </iframe>
             <h2>Ejercicio 2</h2>
-                <iframe class="container">
-                    Escena 2
+            <p>2-	Se crea un objeto escena que contendrá todos los elementos que la conforme que será objetos y luces. Este objeto canvas se crea automáticamente mediante la instanciación del renderizador.Está situado en el origen de coordenadas y hemos desplazado la cámara a lo largo del eje Z</p>
+                <iframe class="container"  src="prac1-2.html">
+                    
                 </iframe>
-            <h2>Ejercicio N</h2>
-                <iframe class="container">
-                    Escena N
+            <h2>Ejercicio 3</h2>
+            <p>3-	Se pueden apreciar las tres dimensiones del objeto, ya que justo antes de añadir el cubo a la escena se ha rotarlo a lo largo de los ejes X e Y. </p>
+                <iframe class="container" src="prac1-3.html">
+                    
                 </iframe>
+            <h2>Ejercicio 4</h2>
+                <p>4-	El objetivo final de esta sección es construir una escena donde se utilizan tres geometrías distintas y tres tipos de materiales.</p>
+                    <iframe class="container" src="prac1-4.html">
+                        
+                    </iframe>
+            <h2>Ejercicio 5</h2>
+                    <p>5-	En esta pregunta se desarrolla una nueva geometría plana (2D) con forma de cuadrado agujereado. Los valores pasados en la creación de las caras referencian a los vértices. Para de esta forma crear la casa.</p>
+                        <iframe class="container" src="prac1-5.html">
+                            
+                        </iframe>
+                        <h2>Ejercicio 6</h2>
+                        <p>6-	En esta escena se muestra la casa en posición lateral utilizando vértices y definiendo constantes para poder visualizar la casa. El cubo utiliza un material básico, el cilindro un material de tipo Lambert y la esfera un material de tipo Phong.</p>
+                            <iframe class="container" src="prac1-6.html">
+                                
+                            </iframe> 
             <h2>Dificultades encontradas</h2>
+            <p>Los buffers en BufferGeometry son matrices de valores como posiciones, normales, colores, etc. Es un poco complicado de entender al principio, pero al familiarizarte con la estructura de estos buffers te permitirá manipular eficientemente los datos del vértice.</p>
         </div>
     </body>
 </html>

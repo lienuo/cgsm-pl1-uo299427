@@ -16,5 +16,12 @@ if ( WEBGL.isWebGLAvailable() ) {
     box.rotation.set( Math.PI / 5, Math.PI / 5, 0 );
     scene.add( box );
     renderer.render( scene, camera );
+    
+    window.addEventListener( 'resize', ( ) => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix( );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.render( scene, camera );
+    }, false );
 
 }

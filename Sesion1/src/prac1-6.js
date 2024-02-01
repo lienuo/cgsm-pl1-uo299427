@@ -13,6 +13,7 @@ const box = new THREE.Mesh( geometry1, material1 );
 box.position.set(-100,0,0)
 scene.add( box );
 renderer.render( scene, camera )
+// luz
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
 scene.add( light );
 //Esfera
@@ -78,5 +79,12 @@ const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 const square = new THREE.Mesh( geometry, material );
 scene.add( square );
 renderer.render( scene, camera );
+
+window.addEventListener( 'resize', ( ) => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix( );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.render( scene, camera );
+}, false );
 
 

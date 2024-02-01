@@ -55,3 +55,10 @@ const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 const square = new THREE.Mesh( geometry, material );
 scene.add( square );
 renderer.render( scene, camera );
+
+window.addEventListener( 'resize', ( ) => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix( );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.render( scene, camera );
+}, false );
