@@ -15,14 +15,32 @@ if ( WEBGL.isWebGLAvailable() ) {
 const light=  new THREE.PointLight( 0xffffff, 1,1000,0 );
 light.position.set( 0, 0, 120 );
 scene.add( light );
-//Esfera
+//Tierra
 const mapUrl = "../textures/tierra.gif";   // The file used as texture
 const textureLoader = new THREE.TextureLoader( );  // The object used to load textures
 const map = textureLoader.load( mapUrl, ( loaded ) => { renderer.render( scene, camera ); } );
 const material1 = new THREE.MeshPhongMaterial( { map: map } );
 const geometryesfera = new THREE.SphereGeometry( 50, 50, 50 ); 
 const sphere = new THREE.Mesh( geometryesfera, material1 ); 
-scene.add( sphere );
+
+
+//Atmósfera
+const Nube = "../textures/Nube.png";   
+const textureLoader1 = new THREE.TextureLoader( );  
+const mapNube = textureLoader.load( Nube, ( loaded ) => { renderer.render( scene, camera ); } );
+var atmosphereMaterial = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, map: mapNube, transparent: true } );
+const geometrynube = new THREE.SphereGeometry( 51, 51, 51 ); 
+const sphere1 = new THREE.Mesh( geometrynube, atmosphereMaterial ); 
+
+
+// Creando el Objeto.
+const object = new THREE.Object3D();
+object.add( sphere );
+object.add( sphere1 );
+object.rotation.z=0.36; 
+scene.add( object );
+//Rotoacion de Objeto.
+
 
 renderer.render( scene, camera );
     window.addEventListener( 'resize', ( ) => {

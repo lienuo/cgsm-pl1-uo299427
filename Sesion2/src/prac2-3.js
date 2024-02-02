@@ -24,6 +24,16 @@ const geometryesfera = new THREE.SphereGeometry( 50, 50, 50 );
 const sphere = new THREE.Mesh( geometryesfera, material1 ); 
 scene.add( sphere );
 
+//Atmósfera
+const Nube = "../textures/Nube.png";   
+const textureLoader1 = new THREE.TextureLoader( );  
+const mapNube = textureLoader.load( Nube, ( loaded ) => { renderer.render( scene, camera ); } );
+//const material2 = new THREE.MeshLambertMaterial( { map: map1 } );
+var atmosphereMaterial = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, map: mapNube, transparent: true } );
+const geometrynube = new THREE.SphereGeometry( 51, 51, 51 ); 
+const sphere1 = new THREE.Mesh( geometrynube, atmosphereMaterial ); 
+scene.add( sphere1 );
+
 renderer.render( scene, camera );
     window.addEventListener( 'resize', ( ) => {
         camera.aspect = window.innerWidth / window.innerHeight;

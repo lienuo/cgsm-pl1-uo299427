@@ -2,9 +2,9 @@ import * as THREE from 'three';
 import WEBGL from 'three/examples/jsm/capabilities/WebGL.js';
 
 if ( WEBGL.isWebGLAvailable() ) {
-    // WebGL is available
-    //console.log('Soporta WebGL');
-    //textura
+    //WebGL is available;
+    console.log('Soporta WebGL');
+   
     const mapUrl = "../textures/crate.gif";   // The file used as texture
 const textureLoader = new THREE.TextureLoader( );  // The object used to load textures
 const map = textureLoader.load( mapUrl, ( loaded ) => { renderer.render( scene, camera ); } );
