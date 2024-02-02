@@ -1,5 +1,5 @@
 {
-  "name": "cgsm-pl1-uo299427",
+  "name": "sesion1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,5 +11,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "three": "^0.161.0"
+  }
 }
