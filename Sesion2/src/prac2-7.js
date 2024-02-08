@@ -37,9 +37,6 @@ object.add( sphere1 );
 object.rotation.z=0.36; //Rotoacion de Objeto.
 scene.add( object );
 
-
-
-
 //Luna
 const mapluna = "../textures/moon_1024.jpg";   // The file used as texture
 const textureLuna = new THREE.TextureLoader( );  // The object used to load textures
@@ -64,8 +61,7 @@ animate();
 function animate( ) {
 
     const delta = clock.getDelta( ); //  Calcular el tiempo transcurrido
-
-    const rotation = ( delta * Math.PI * 2 ) / 24;
+    const rotation = ( delta * Math.PI * 2 ) / 28;
     sphere.rotation.y += rotation;
     sphere1.rotation.y += rotation * 0.95;
 
