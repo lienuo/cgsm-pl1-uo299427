@@ -44,7 +44,6 @@ animate();
 function animate( ) {
 
     const delta = clock.getDelta( ); // Elapsed time in seconds
-
     const rotation = ( delta * Math.PI * 2 ) / 24;
     sphere.rotation.y += rotation;
     sphere1.rotation.y += rotation * 0.95;
@@ -55,7 +54,6 @@ function animate( ) {
     // Request the browser to execute the animation-rendering loop
     requestAnimationFrame( animate );
 };
-
 
 
 //Luna

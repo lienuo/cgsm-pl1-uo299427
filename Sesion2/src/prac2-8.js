@@ -29,7 +29,7 @@ const Nube = "../textures/Nube.png";
 const textureLoader1 = new THREE.TextureLoader( );  
 const mapNube = textureLoader.load( Nube, ( loaded ) => { renderer.render( scene, camera ); } );
 var atmosphereMaterial = new THREE.MeshLambertMaterial( { color: 0xFFFFFF, map: mapNube, transparent: true } );
-const geometrynube = new THREE.SphereGeometry( 30, 31, 31 ); 
+const geometrynube = new THREE.SphereGeometry( 31, 31, 31 ); 
 const sphere1 = new THREE.Mesh( geometrynube, atmosphereMaterial ); 
 
 //  Creando el Objeto.Tierra
@@ -64,9 +64,9 @@ const material = new THREE.ShaderMaterial( {
     fragmentShader
 } );
 
-const Sol = new THREE.SphereGeometry( 120, 120, 120 ); 
+const Sol = new THREE.SphereGeometry( 150, 150, 150 ); 
 const MostrarSol = new THREE.Mesh( Sol, material ); 
-MostrarSol.position.set( -230, 0, 0 );
+MostrarSol.position.set( 245, 0, 0 );
 scene.add( MostrarSol );
 
 
@@ -75,7 +75,7 @@ const mapluna = "../textures/moon_1024.jpg";   // The file used as texture
 const textureLuna = new THREE.TextureLoader( );  // The object used to load textures
 const maplu = textureLoader.load( mapluna, ( loaded ) => { renderer.render( scene, camera ); } );
 const materialLuna = new THREE.MeshLambertMaterial( { map: maplu } );
-const geometryLuna = new THREE.SphereGeometry( 13.5, 13.5, 13.5 ); 
+const geometryLuna = new THREE.SphereGeometry( 8.10, 8.10, 8.10 ); 
 const Luna = new THREE.Mesh( geometryLuna, materialLuna ); 
 Luna.position.set(-100,0,0);
 Luna.rotation.y=Math.PI;
@@ -85,9 +85,7 @@ moonGroup.rotation.x = 0.089;
 scene.add( moonGroup );
 
 const clock = new THREE.Clock();
-// Velocidad angular en radianes por segundo
-//var orbitalPeriodSeconds = 2419200;
-var angularSpeed = (2 * Math.PI) / 2419200;
+
 
 animate();
 
@@ -102,7 +100,7 @@ function animate( ) {
 
   // Rotar la Luna alrededor del eje Y (vertical) con la velocidad angular calculada
  
-    moonGroup.rotateOnAxis(new THREE.Vector3(0, 1, 0),0.01 );
+    moonGroup.rotateOnAxis(new THREE.Vector3(0, 1, 0),0.0096);
 
     // Render the scene
     renderer.render( scene, camera );

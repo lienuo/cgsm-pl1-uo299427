@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Informe de prácticas de CGSM (2023-2024)</title>
+        <link rel="stylesheet" type="text/css" href="report.css">
+    </head>
+    <body>
+        <!-- Información general -->
+        <div id="head">
+            <table id="general">
+                <tr>
+                    <th class="header">Nombre:</th>
+                    <td>Lien Burgos Pérez</td>                     
+                </tr>
+                <tr>
+                    <th>Práctica:</th>
+                    <td>2</td> 
+                </tr>
+            </table>
+        </div>
+        <div id="content">
+            <h1>Computación Gráfica y Servicios Multimedia</h1>
+            <h2>Descripción de la práctica</h2>
+                
+            <h2>Ejercicio 1</h2>
+            <p>1-	En esta funcionalidad se trabajó con texturas, que no es más que un patrón o una imagen que se utiliza para modificar las características de una superficie. Se usaron las mismas mediante three.js. Las texturas se hacen de forma asíncrona mediante peticiones HTTP adicionales al servidor.</p>
+                <ol>
+                </ol>
+                <iframe class="container" src="prac2-1.html">                    
+                </iframe>
+            <h2>Ejercicio 2</h2>
+            <p>2-	Se construye el modelo Tierra, donde aparezca una esfera con material de la de tipo MeshPhongMaterial y una luz de tipo PointLight que incida de forma lateral sobre la esfera.</p>
+                <iframe class="container"  src="prac2-2.html">
+                    
+                </iframe>
+            <h2>Ejercicio 3</h2>
+            <p>3-Al modelo Tierra añadiremos la atmósfera el material de tipo MeshLambertMaterial. Para ello utilizaremos una esfera ligeramente mayor que la utilizada para representar el globo terráqueo. Esta esfera debe ser transparente para dejar ver lo que hay en la superficie del planeta, pero a la vez debe mostrar algunas nubes. </p>
+                <iframe class="container" src="prac2-3.html">
+                    
+                </iframe>
+            <h2>Ejercicio 4</h2>
+                <p>4-Al modelo Tierra añadiremos la inclinación respecto al plano que recorre su órbita alrededor del Sol aproximadamente 23 grados. La rotación afecta tanto al globo terráqueo como a la atmósfera, por lo que se crea un Object3D que incluya ambos elementos.</p>
+                    <iframe class="container" src="prac2-4.html">
+                        
+                    </iframe>
+            <h2>Ejercicio 5</h2>
+                    <p>5-Se construye el modelo Tierra-Luna. La Luna tienen un tamaño que corresponda a la fracción del tamaño de la Tierra correspondiente (0.27 tierras).</p>
+                        <iframe class="container" src="prac2-5.html">
+                            
+                        </iframe>
+                        <h2>Ejercicio 6</h2>
+                        <p>6-En el Modelo Tierra-Luna en esta escena se anima el giro de la Tierra, la rotación es de 24 segundos hace que el globo terráqueo y la atmósfera roten a diferentes velocidades para simular el movimiento de las nubes. Se expresa la rotación de la Tierra en radianes por hora, basada en el tiempo transcurrido desde el último cuadro de animación renderizado.</p>
+                            <iframe class="container" src="prac2-6.html">
+                                
+                            </iframe> 
+                        </iframe>
+                        <h2>Ejercicio 7</h2>
+                        <p>7-Se Anima la rotación de la Luna alrededor de la Tierra. La luna completa su órbita cada 28 días. Para la rotación se calcula la velocidad angular por segundo se utiliza rotateOnAxis es un método de Three.js que rota un objeto alrededor de un eje específico. crea un vector tridimensional que representa el eje de rotación, (0, 1, 0) indica que la rotación se realizará alrededor del eje Y, además se le pasa el ángulo de rotación en radianes, que en este caso   la velocidad angular de la Luna en radianes por segundo sería aproximadamente 0.0096.</p>
+                            <iframe class="container" src="prac2-7.html">
+                                
+                            </iframe> 
+
+                        </iframe>
+                        <h2>Ejercicio 8</h2>
+                        <p>8-Se construye el modelo Tierra-Luna y además se incluye el Sol. Para representar el objeto Sol de forma realista, para es te caso utilizamos un shader de vértices y otro de fragmentos. Se debe crear una esfera solar en el mismo punto donde se encuentra la luz de la escena. Sol tiene que ser 5 veces el tamaño de la tierra.</p>
+                            <iframe class="container" src="prac2-8.html">
+                                
+                            </iframe> 
+                        </iframe>
+                        <h2>Ejercicio 9</h2>
+                        <p>9-En esta escena se mostrará un satélite, para ello se importará un modelo de la estación espacial internacional. por lo que necesitaremos utilizar la extensión de three.js para cargar modelos COLLADA. Lo importamos a la escena, que lo cargara y lo resécala. </p>
+                            <iframe class="container" src="prac2-9.html">
+                                
+                            </iframe> 
+            <h2>Dificultades encontradas</h2>
+            <p>Una de las principales dificultades ha sido con la posición de la cámara y la luz. Experimentar con diferentes configuraciones y valores para la luz y la posición de la cámara para encontrar la combinación que mejor se adapte a tus necesidades y al estilo visual de tu escena.
+                Rotación de la luna alrededor de la tierra pasándole la velocidad angular en una variable. Además de detalles de posición de las imágenes para cargar modelos COLLADA.
+                
+            </p>
+        </div>
+    </body>
+</html>
